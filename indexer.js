@@ -17,7 +17,7 @@ exports.index = function(path, name, db) {
 	configureTemp();
 	database = db;
 
-	execSync(`ffmpeg -i ${path} -acodec copy -f segment -segment_time 10 -vcodec copy -reset_timestamps 1 -map 0 ./tmp/%d.ts`);
+	execSync(`ffmpeg -loglevel panic -i ${path} -acodec copy -f segment -segment_time 10 -vcodec copy -reset_timestamps 1 -map 0 ./tmp/%d.ts`);
 	var files = fs.readdirSync('./tmp');
 
 	files.forEach(file => {
