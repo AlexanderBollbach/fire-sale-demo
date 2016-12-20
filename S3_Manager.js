@@ -61,7 +61,7 @@ module.exports = {
       console.error("unable to upload:", err.stack);
     });
     uploader.on('progress', function() {
-      console.log("progress", uploader.progressMd5Amount,
+      // console.log("progress", uploader.progressMd5Amount,
         // uploader.progressAmount, uploader.progressTotal);
     });
     uploader.on('end', function() {
